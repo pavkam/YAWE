@@ -1,0 +1,2 @@
+PKTT = {$YROOT}/yawedbpktt.bpl
+DBC = {$YROOT}/yawedbdbc.bpl

@@ -1,0 +1,62 @@
+package bfgcore;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA OFF}
+{$IOCHECKS OFF}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $2CE00000}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl;
+
+contains
+  Bfg.SystemInfo in '..\Bfg.SystemInfo.pas',
+  Bfg.Utils in '..\Bfg.Utils.pas',
+  Bfg.Threads in '..\Bfg.Threads.pas',
+  Bfg.Algorithm in '..\Bfg.Algorithm.pas',
+  Bfg.Classes in '..\Bfg.Classes.pas',
+  Bfg.Strings in '..\Bfg.Strings.pas',
+  Bfg.Unicode in '..\Bfg.Unicode.pas',
+  Bfg.Geometry in '..\Bfg.Geometry.pas',
+  Bfg.PluginSystem in '..\Bfg.PluginSystem.pas',
+  Bfg.TypInfoEx in '..\Bfg.TypInfoEx.pas',
+  Bfg.Compression in '..\Bfg.Compression.pas',
+  Bfg.Metadata in '..\Bfg.Metadata.pas',
+  Bfg.Crypto in '..\Bfg.Crypto.pas',
+  Bfg.Resources in '..\Resource\Bfg.Resources.pas',
+  Bfg.Containers in '..\Containers\Bfg.Containers.pas',
+  Bfg.Containers.ArrayList in '..\Containers\Bfg.Containers.ArrayList.pas',
+  Bfg.Containers.BinaryTrees in '..\Containers\Bfg.Containers.BinaryTrees.pas',
+  Bfg.Containers.ByteBuffer in '..\Containers\Bfg.Containers.ByteBuffer.pas',
+  Bfg.Containers.CircularBuffer in '..\Containers\Bfg.Containers.CircularBuffer.pas',
+  Bfg.Containers.SortedMap in '..\Containers\Bfg.Containers.SortedMap.pas',
+  Bfg.Containers.HashSets in '..\Containers\Bfg.Containers.HashSets.pas',
+  Bfg.Containers.Interfaces in '..\Containers\Bfg.Containers.Interfaces.pas',
+  Bfg.Containers.LinkedLists in '..\Containers\Bfg.Containers.LinkedLists.pas',
+  Bfg.Containers.Queues in '..\Containers\Bfg.Containers.Queues.pas',
+  Bfg.Containers.Sets in '..\Containers\Bfg.Containers.Sets.pas',
+  Bfg.Containers.Stacks in '..\Containers\Bfg.Containers.Stacks.pas',
+  Bfg.Containers.StringList in '..\Containers\Bfg.Containers.StringList.pas',
+  Bfg.Containers.HashMap in '..\Containers\Bfg.Containers.HashMap.pas',
+  ZLib.LibInterface in '..\..\..\Vendor\ZLib32\ZLib.LibInterface.pas',
+  Bfg.Containers.HashMapsEx in '..\Containers\Bfg.Containers.HashMapsEx.pas';
+
+end.

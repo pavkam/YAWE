@@ -1,0 +1,21 @@
+WoWD Project.
+ - We have used some of their code base for SRP6 implementation in the earlier versions. 
+   Available under GPLv2 license.
+
+MaNGOS Project
+ - Used some Update Fields and OpCodes.
+   Available under GPLv2 license.
+ 
+JEDI Library
+ - Use code pieces for System information retreival.
+   Available under MPL/LGPL licence.
+   
+DelphiCodeToDoc (TridenT)
+ - Used the this tool as a base for YAPI documentation generator. Available under GPL.
+   YAPI is also available under GPL on request.
+   
+ZLib Project
+ - Used it's library/interface in this project. Please note that it's modified!
+
+Fastcode Project
+ - Used some routines from these great guys. Code available in public domain.

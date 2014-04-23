@@ -1,0 +1,1 @@
+;; Put all player names which should be reserved here

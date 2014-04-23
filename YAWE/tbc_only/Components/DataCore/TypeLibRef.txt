@@ -1,0 +1,111 @@
+procedure GetTypeLibraryReferences(const FileName: string;
+                                   References: TStrings);
+
+  function IndirectionTypeDesc(TypeDesc: PTypeDesc): PTypeDesc;
+  begin
+    Result := TypeDesc;
+
+    while Result <> nil do
+    begin
+      // Follow pointer type to pointed to type.
+      if Result.vt <> VT_PTR then
+        Break;
+
+      Result := Result.ptdesc;
+    end;
+  end;
+
+  procedure GetTypeLibName(const TypeInfo: ITypeInfo; RefType:
+                           HRefType; References: TStrings);
+  var
+    CustomTypeInfo: ITypeInfo;
+    CustomTypeLib: ITypeLib;
+    Index: Integer;
+    Guid: TGuid;
+    CustomLibAttr: PTLibAttr;
+    TypeLibName: WideString;
+  begin
+    OleCheck(TypeInfo.GetRefTypeInfo(RefType, CustomTypeInfo));
+    OleCheck(CustomTypeInfo.GetContainingTypeLib(CustomTypeLib, Index));
+
+    // Get the name and guid of the type library that contains this type.
+    OleCheck(CustomTypeLib.GetLibAttr(CustomLibAttr));
+
+    try
+      OleCheck(CustomTypeLib.GetDocumentation(MEMBERID_NIL,
+        @TypeLibName, nil, nil, nil));
+      References.Add(Format('%s - %s',
+        [TypeLibName, GuidToString(CustomLibAttr.guid)]));
+    finally
+      CustomTypeLib.ReleaseTLibAttr(CustomLibAttr);
+    end;
+  end;
+
+var
+  TypeLib: ITypeLib;
+  TypeInfoIndex: Integer;
+  Kind: TTypeKind;
+  TypeInfo: ITypeInfo;
+  TypeAttr: PTypeAttr;
+  FuncDescIndex: Integer;
+  FuncDesc: PFuncDesc;
+  ParamsIndex: Integer;
+  ElemDesc: PElemDesc;
+  TypeDesc: PTypeDesc;
+  ImplTypesIndex: Integer;
+  RefType: HRefType;
+begin
+  OleCheck(LoadTypeLibEx(PWideChar(WideString(FileName)), REGKIND_NONE, TypeLib));
+
+  // Get the CoClasses, interfaces, enums, modules dispinterfaces,
+  // alias', unions and records.
+  for TypeInfoIndex := 0 to TypeLib.GetTypeInfoCount - 1 do
+  begin
+    TypeLib.GetTypeInfoType(TypeInfoIndex, Kind);
+    TypeLib.GetTypeInfo(TypeInfoIndex, TypeInfo);
+    OleCheck(TypeInfo.GetTypeAttr(TypeAttr));
+
+    try
+      case Kind of
+        TKIND_COCLASS:
+        begin
+          // Get the implemented interfaces.
+          for ImplTypesIndex := 0 to TypeAttr.cImplTypes - 1 do
+          begin
+            OleCheck(TypeInfo.GetRefTypeOfImplType(ImplTypesIndex, RefType));
+            GetTypeLibName(TypeInfo, RefType, References);
+          end;
+        end;
+
+        TKIND_INTERFACE, TKIND_DISPATCH:
+        begin
+          for FuncDescIndex := 0 to TypeAttr.cFuncs - 1 do
+          begin
+            OleCheck(TypeInfo.GetFuncDesc(FuncDescIndex, FuncDesc));
+
+            try
+              // Item 0 is the method name. Ignore it for the parameter list.
+              for ParamsIndex := 1 to FuncDesc.cParams do
+              begin
+                ElemDesc := @FuncDesc.lprgelemdescParam[ParamsIndex - 1];
+                TypeDesc := IndirectionTypeDesc(@ElemDesc.tdesc);
+
+                if TypeDesc.vt = VT_USERDEFINED then
+                begin
+                  RefType := TypeDesc.hreftype;
+                  GetTypeLibName(TypeInfo, RefType, References);
+                end;
+              end;
+
+            finally
+              TypeInfo.ReleaseFuncDesc(FuncDesc);
+            end;
+          end;
+        end;
+      end;
+
+    finally
+      TypeInfo.ReleaseTypeAttr(TypeAttr);
+    end;
+  end;
+end;

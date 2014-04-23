@@ -1,0 +1,67 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{52b8711a-ee6c-4bed-b7e8-2f96ec8a9d8c}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject xmlns=""><Default.Personality></Default.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="YAWE" DependsOnTargets="bfgfrmwrk;bfgclasses;bfgfrmwrk;bfgclasses;ucl32;yes32;bfgclasses;bfgfrmwrk">
+    <MSBuild Projects="YAWE.dproj" Targets="" />
+  </Target>
+  <Target Name="YAWE:Clean" DependsOnTargets="bfgfrmwrk:Clean;bfgclasses:Clean;bfgfrmwrk:Clean;bfgclasses:Clean;ucl32:Clean;yes32:Clean;bfgclasses:Clean;bfgfrmwrk:Clean">
+    <MSBuild Projects="YAWE.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="YAWE:Make" DependsOnTargets="bfgfrmwrk:Make;bfgclasses:Make;bfgfrmwrk:Make;bfgclasses:Make;ucl32:Make;yes32:Make;bfgclasses:Make;bfgfrmwrk:Make">
+    <MSBuild Projects="YAWE.dproj" Targets="Make" />
+  </Target>
+  <Target Name="ucl32" DependsOnTargets="bfgclasses;bfgfrmwrk">
+    <MSBuild Projects="..\..\Library\UCL32\ucl32.dproj" Targets="" />
+  </Target>
+  <Target Name="ucl32:Clean" DependsOnTargets="bfgclasses:Clean;bfgfrmwrk:Clean">
+    <MSBuild Projects="..\..\Library\UCL32\ucl32.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="ucl32:Make" DependsOnTargets="bfgclasses:Make;bfgfrmwrk:Make">
+    <MSBuild Projects="..\..\Library\UCL32\ucl32.dproj" Targets="Make" />
+  </Target>
+  <Target Name="yes32" DependsOnTargets="bfgfrmwrk;bfgclasses">
+    <MSBuild Projects="..\..\Library\YES\yes32.dproj" Targets="" />
+  </Target>
+  <Target Name="yes32:Clean" DependsOnTargets="bfgfrmwrk:Clean;bfgclasses:Clean">
+    <MSBuild Projects="..\..\Library\YES\yes32.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="yes32:Make" DependsOnTargets="bfgfrmwrk:Make;bfgclasses:Make">
+    <MSBuild Projects="..\..\Library\YES\yes32.dproj" Targets="Make" />
+  </Target>
+  <Target Name="bfgclasses">
+    <MSBuild Projects="..\..\Shared\Misc\Packages\bfgclasses.dproj" Targets="" />
+  </Target>
+  <Target Name="bfgclasses:Clean">
+    <MSBuild Projects="..\..\Shared\Misc\Packages\bfgclasses.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="bfgclasses:Make">
+    <MSBuild Projects="..\..\Shared\Misc\Packages\bfgclasses.dproj" Targets="Make" />
+  </Target>
+  <Target Name="bfgfrmwrk" DependsOnTargets="bfgclasses">
+    <MSBuild Projects="Framework\Packages\bfgfrmwrk.dproj" Targets="" />
+  </Target>
+  <Target Name="bfgfrmwrk:Clean" DependsOnTargets="bfgclasses:Clean">
+    <MSBuild Projects="Framework\Packages\bfgfrmwrk.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="bfgfrmwrk:Make" DependsOnTargets="bfgclasses:Make">
+    <MSBuild Projects="Framework\Packages\bfgfrmwrk.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="YAWE;ucl32;yes32;bfgclasses;bfgfrmwrk" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="YAWE:Clean;ucl32:Clean;yes32:Clean;bfgclasses:Clean;bfgfrmwrk:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="YAWE:Make;ucl32:Make;yes32:Make;bfgclasses:Make;bfgfrmwrk:Make" />
+  </Target>
+</Project>

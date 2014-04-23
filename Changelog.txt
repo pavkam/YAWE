@@ -1,0 +1,964 @@
+Conventions: 
+
+ *** - a started part of code
+ +++ - a working part of code
+ %%% - a partially working part of code (this means the author is still working on that)
+ // {} (* *) - comment that won't be published
+
+===================================================
+
+Revision 1, 25-01-2006, TheSelby:
+ *** started the project
+
+Revision 2, 25-01-2006, PavkaM:
+ *** Started the work on the Framework and Platform.
+
+Revision 3, 25-01-2006, PavkaM:
+ +++ Configuration system ready. (first stages)
+
+Revision 4, 25-01-2006, PavkaM:
+ +++ Small fix/update
+
+Revision 5, 25-01-2006, PavkaM:
+ +++ Project reorganizing
+
+Revision 6, 25-01-2006, PavkaM:
+ +++ Starting the Cores.
+
+Revision 7, 25-01-2006, TheSelby:
+ +++ Added a subversion changelog
+
+Revision 8, 25-01-2006, TheSelby:
+ +++ Removed a double existent file (framework.pas which was same in 2 locations)
+ +++ Added some platform independent checks.
+ +++ Added $MODE DELPHI for FPC in compiler.inc
+ +++ Conditioned usage of Windows just for win and of Types for other OSes
+
+Revision 9, 25-01-2006, TheSelby:
+ +++ Minor change in this file.
+
+Revision 10, 26-01-2006, PavkaM:
+ *** Debug
+ *** Core Base
+ *** Main file improvements
+ +++ Reverted Selby's commit.
+
+Revision 11, 26-01-2006, PavkaM:
+ +++ Forgot a File.
+ +++ Repaired some cross-calls.
+
+Revision 12, 26-01-2006, PavkaM:
+ +++ Data abstraction
+
+Revision 13, 26-01-2006, PavkaM:
+ +++ Accounts
+
+Revision 14, 27-01-2006, TheSelby:
+ +++ Added a tool CSV-To-TT (DBC files exported as CSV will be converted to TT format using this tool)
+ +++ Added some TT files exported from CSV (12)
+ +++ Updated subversion changelog.
+
+Revision 15, 27-01-2006, PavkaM:
+ +++ Extended Accounts.
+ +++ TT now with saving.
+ +++ More framework updates.
+ +++ Better console output.
+
+Revision 16, 27-01-2006, PavkaM:
+ +++ Accounts db changes and configure changes
+
+Revision 17, 27-01-2006, PavkaM:
+ +++ Network enabled.
+ *** Started XCore.
+ +++ Added Logon server basics.
+ *** Starting work on logon server.
+
+Revision 18, 27-01-2006, TheSelby:
+ +++ Deleted the DBC TT Files. They are not needed here!
+
+Revision 19, 27-01-2006, TheSelby:
+ +++ Code CleanUP
+ +++ Added comentaries in source code.
+
+Revision 20, 27-01-2006, TheSelby:
+ +++ Added reserved slots option for ACCOUNTS (let it be :) )
+
+Revision 21, 28-01-2006, PavkaM:
+ +++ svn server test
+
+Revision 22, 28-01-2006, PavkaM:
+ +++ RS Code.
+ +++ Improvements, locking bugs.
+
+Revision 23, 31-01-2006, PavkaM:
+ +++ Added thanks.txt file to honor MaNGOS for SRP6.
+ +++ Added C++ DLL implementation of libsrp6.
+ +++ DataCore now supports PkTT. Loading of GOs as an example.
+ +++ Small fixes Accounts.
+ +++ XCore handles more errors.
+ +++ Logon Server pretty much 100% complete.
+ +++ Auto-Patch manger and supporting code.
+ *** Initial work on PkTT engine.
+ +++ Fixes to TT Engine.
+ +++ Support for mass field set in Mediums.
+ +++ Version also contains constants. Supported builds is now string.
+ +++ Extended base Framework.
+ +++ Extended console. Locking is done in framework not platform. This avoids deadlocks.
+ +++ Error manager now keeps notice of all running threads. More improvements.
+ +++ Sockets are now registered at Error manager and are more extensible.
+ +++ Added threading. Also a nice Delegate Thread class is available now used in Auto-patch.
+ +++ Removed TpLockbox dependency
+ +++ Extended Platform base.
+ +++ Platform Encryption now based on libsrp6.
+ +++ Platform libsrp6 added.
+ +++ Platform MD5 added. ( tplockbox )
+ +++ Platform Socket server now doesn't loose sockets.
+ +++ Platform Threading added.
+ +++ Trash added with 2 other implementations of srp6.
+
+Revision 24, 31-01-2006, PavkaM:
+ +++ Forgot to commit BIN stuff.
+
+Revision 25, 31-01-2006, TheSelby:
+ +++ Code cleanup.
+
+Revision 26, 31-01-2006, PavkaM:
+ +++ Using PkTT for Accounts.
+ +++ Comments and GPl notices in C++ SRP6.
+ +++ Removed a test func. call in DataCore.
+ +++ Unknown packets doesn't kill the server anymore but performs a soft disconnect.
+ +++ Check for overflow in user names.
+ +++ PkTT improvements
+ +++ Added a Key option to SRP6 class to get string key.
+ +++ Platform Sockets Server improved and repaired an Access Violation.
+ +++ User is now marked as logged in and out and the hash is saved also.
+
+Revision 27, 31-01-2006, TheSelby:
+ +++ Realm codes/colors/etc detected.
+
+Revision 28, 31-01-2006, TheSelby:
+ +++ Realm population (low, medium, high) checks
+ +++ Realm coloring based on population now. Check is needed to see if the realm server is "dead"
+ +++ Reading realm type from configuration file and so a proper display will be there.
+
+Revision 29, 01-02-2006, PavkaM:
+ +++ Extended libsrp6 to support Auth checking needed for world.
+ +++ Changes to accounts.
+ +++ Packet buffer improvements for encryption.
+ +++ XCore now loads World Manager also.
+ +++ Added Realm Object and List. Simplifies things up.
+ +++ Added WS constants.
+ +++ Added Xor-encryption class
+ +++ Logon supports realm list class.
+ +++ Opcodes added for WS.
+ +++ World Manager and World Sockets. ( Mem. Leaks )
+ +++ WorldSession attached to Sockets ( Note: WorldSession is not equivalent to WoWD-cores. )
+ +++ Extended Framework.
+ +++ Some Sync constants in Version.
+ +++ Base extended with some exceptions.
+ +++ Console displays more stuff.
+ +++ Sockets extended.
+ +++ Small threading fixes.
+ +++ Platform code extended.
+ +++ Platform LibSRP6 supports Auth Checking.
+ +++ Platform Encryption extended for Auth.
+ +++ Added ReverseByteOrder to Base for htohs, htons ( platform indep. ).
+ +++ Improved PkTT. Accounts now based on PkTT.
+
+Revision 30, 02-02-2006, TheSelby:
+ +++ Info Bar can now be disabled by editing the configuration file.
+ +++ Database loading now supports
+      - areatriggers
+      - items
+      - itempages
+      - spawnpoints
+      - static spawn objects
+      - graveyards
+      - character stats informations
+      - npc texts
+    Note: All these loaded fills about 13 Mb of memory :)
+ +++ Added proper comments on some parts of the code.
+ +++ Code cleanup.
+
+Revision 31, 02-02-2006, TheSelby:
+ +++ Repaired a bug.
+ +++ PING/PONG opcodes.
+ +++ Code cleanup.
+
+Revision 32, 03-02-2006, PavkaM:
+ +++ libSRP6 updated for mem. leaks.
+ +++ Extended System Config to support Scriting. Also erased TheSelby's stuff.
+ +++ Added a small .bat file to test network load capacity.
+ +++ Added OpenCore. ( Praise the Lord Selby ).
+ +++ DataCore had memory leaks.
+ +++ Accounts had memory leaks.
+ +++ Opencore uses OpenWorld.
+ +++ OpenSession added.
+ +++ Openworld up and running.
+ +++ XCore remodeled.*2 speed enhancements.
+ +++ Logon ... nothin' here ... move along.
+ +++ Added FindOpcode ( no more 100 wrappers for such a trivial stuff ).
+ +++ XCore Worldsession remodelled and now communicates with OpenSession.
+ +++ Added ESM ( scripting ). Currently builds into exe as unit.
+ +++ Added YESM extension so that decripts could control if user should or not login.
+ +++ Extended base.
+ +++ Repaired console after selby :) ( no offence ).
+ +++ New abstraction layer for DLL loading.
+ +++ Socket server : repaired 2 mem leaks and a fault-cause. Runs smooooooth now with no crashes at all.
+( Next: OpenObject -> OpenUnit -> OpenPlayer; Data Manipulators for OpenObject; And Char List implementation ).
+
+Revision 33, 12-02-2006, TheSelby
+ +++ Some research informations!
+
+Revision 34, 13-02-2006, PavkaM
+ +++ Project Reograg.
+ +++ New TT File support.
+ +++ Dropped TT Engine. Working on PkTT only.
+ +++ Using Interfaces as Callbacks.
+ +++ Repaired too many bugs.
+ +++ Added too numerous code to remember.
+ +++ Added Char List loading.
+ +++ Realm shown chars on realm.
+ +++ OpenObject, Unit, Player ... Components.
+ +++ ZLib
+ +++ Addons numbering ...
+        OBS: This is a week long commit so I can't really say all the stuff ... Enjoy
+
+Revision 35, 13-02-2006, PavkaM
+ +++ Forgot one file to add in the commit!
+
+Revision 36, 13-02-2006, PavkaM
+ +++ Prepared TODO list
+
+Revision 37, 13-02-2006, TheSelby
+ +++ Char info loading
+
+Revision 38, 13-02-2006, TheSelby
+ +++ Added Borland Delphi 2006 Support
+ +++ Added 1.9.X Opcodes
+ +++ Minor changes in chartemplate
+
+Revision 39, 13-02-2006, PavkaM
+ +++ Race Condition in World Fixed.
+ +++ Check for Char creation. Scripting involved.
+ +++ PkTT Extensions.
+ +++ Updates.
+
+Revision 40, 13-02-2006, PavkaM
+ +++ OnLevelUp, and Model.
+ +++ Char Deletion.
+ +++ SSV Class.
+
+Revision 41, 14-02-2006, PavkaM
+ +++ Small quick update
+
+Revision 42, 14-02-2006, PavkaM
+ +++ Repaired a memory leak
+
+Revision 43, 14-02-2006, PavkaM
+ +++ Optimized PkTT.
+ +++ Repair to lType
+ +++ Added ItemTemplates
+ +++ Started Items
+
+Revision 44, 14-02-2006, TheSelby
+ +++ Added loading of ItemTemplates.
+ +++ Added all ItemTemplates constants for loading.
+ +++ Initialization of ItemTemplates in OpenItem. PavkaM check this please.
+ +++ Loading of all fields in CHarTempalte is done now.
+ +++ Fixed a copy/paste bug in PKTT Engine (lType related).
+ +++ Repaired a minor bug in SSV Class.
+
+Revision 45, 14-02-2006, PavkaM
+ +++ Working on Equip
+
+Revision 46, 15-02-2006, PavkaM
+ +++ Support for Delphi 2006 modified and rectified.
+
+Revision 47, 15-02-2006, PavkaM
+ +++ Better BDS Integration.
+
+Revision 48, 16-02-2006, PavkaM
+ +++ Added SVN Extractor tool. ( Note: Compile it first prior to using YAWE project ).
+ +++ Adapted d2006 platform for svn build. Also MOTD shows the build after the version: ex 0.1.8.44
+ +++ Started Abstract Groups in OpenCore.
+ +++ Code cleanup in some places.
+
+Revision 49, 16-02-2006, TheSelby
+ +++ Started YAWE CMS - currently working on interface
+ +++ Some minor repairs.
+
+Revision 50, 17-02-2006, TheSelby
+ +++ YAWE CMS - login/register done
+ +++ YAWE CMS - server status implemented
+ +++ YAWE CMS - some new adjustments
+
+Revision 51, 19-02-2006, TheSelby
+ +++ YAWE CMS - port is in config now.
+ +++ YAWE CMS - some checks for directoryes existances, files existances, error handling...
+ +++ YAWE CMS - News section commited (forgot last time)
+ +++ YAWE - repairs for svnbuild tool. Now it extracts the main revision, not the one that the file is registered!
+
+Revision 52, 20-02-2006, PavkaM
+<World-Purpose-Part-1>
+ +++ Total rewrite of the Update System.
+ +++ Rewrite of the Storage Methods for Objects.
+ +++ Enabled Update Fields and all Update packets
+ +++ Multiple rewrites in most of OpenCore.
+ +++ Added YBits for easy use of bit-wise routines.
+ +++ Repaired bugs in pkTT and optimized a bit.
+ +++ Repaired a BDS networking incompatibility.
+ +++ "Regioned" most of the code.
+ +++ Added all update fields in YAWE style.
+ +++ Initialization of the Player.
+ +++ Login Support ( mostly just a hack to get me into the world ).
+ +++ Entering the world.
+Next commit will repair most of the bugs added by this one and will feature compression of the update packets and
+better implemented groups.
+
+Revision 53, 22-02-2006, PavkaM
+<Zhe-World-Part2>
+ +++ Added the System-wide Timer. New Subscription-based system.
+ +++ Ported all framework to subscriptions.
+ +++ Multiple code commenting.
+ +++ New Locker type added.
+ +++ Console shows Subscriptions also.
+ +++ Some bugs fixed.
+ +++ World no longer posses the ability to create threads.
+Next part: Repairing update fields, groups subscription, and new Parts for player.
+
+Revision 54, 22-02-2006, PavkaM
+ +++ Some docs rewrite to correctly show the status of the project.
+ +++ Added a new Icon from John. Still needs a little work, but that's it :)
+
+Revision 55, 22-02-2006, PavkaM
+ +++ Progress file added.
+
+Revision 56, 22-02-2006, PavkaM
+ +++ Dynamic version calculation. Build tool adjusted.
+
+Revision 57, 22-02-2006, PavkaM
+ +++ A small how-to to help people configure the SVNBuild tool properly. Please READ!!!!
+
+Revision 58, 23-02-2006, PavkaM
+ +++ Multiple adjustments for world.
+ +++ Repaired a bug in YTypes. Now Update fields work as indented.
+ +++ Skill Manager.
+ +++ Extended groups. ( preparing for multiplayer + cells ).
+ +++ Added Chat Manager. Extended PacketBuilder.
+ +++ Added Command execution depending on security level.
+ +++ MOTD of the realm now displays for the character :)
+
+Revision 59, 23-02-2006, TheSelby
+ +++ Tutorial manager
+ +++ Cinematics
+ +++ Skill Manager Completion
+
+Revision 60, 23-02-2006, PavkaM
+ +++ Some repairs
+
+Revision 61, 23-02-2006, PavkaM
+ +++ Some more repairs
+
+Revision 62, 27-02-2006, PavkaM
+ +++ Discussions file in /Documentation/Groups.txt about "groups"
+
+Revision 63, 08-03-2006, TheSelby
+ +++ Action Buttons manager
+
+Revision 63, 10-03-2006, PavkaM
+ +++ Half the work needed for Groups.
+
+Revision 64, 15-03-2006, TheSelby
+ +++ Forgot to commit one file!
+
+Revision 65, 20-03-2006, TheSelby
+ +++ SVN Host fixed!
+
+Revision 66, 20-03-2006, TheSelby
+ +++ Added Bin/YAWE.exe!
+
+Revision 67, 04-04-2006, Seth
+ +++ Completely rewrote old sockets using Indy10 - now using I/O Completion Ports and Winsock2 instead
+ +++ Rewrote almost all network-related code due to significant changes in the implementation of sockets
+ +++ Changed implementation of the basic network-data carrier class. See Framework.Data.Buffer.pas.
+ +++ Optimized many string-related routines, iterations and data copying routines
+ +++ Introduced new generic container classes and interfaces. See Platform.Containers and Platform.Containers.Interfaces.pas.
+ +++ YThreadLocker class has been reimplemented using critical sections with spin count - no longer should the application become dead-locked
+ +++ Several minor adjustments I can't think of right now
+ +++ Some units were refactored
+
+Revision 68, 05-04-2006, TheSelby
+ +++ Traced and fixed the client crash bug. Note to Seth: there seems to be a problem with migrating from realm server to world server... this is your area.
+ +++ Fixed update fields for 1.10. At least I hope I did this correctly.
+ +++ Added 1.10 opcodes and their calls.
+ +++ Added OPCODE EXTRACTOR in /Tools (thx wowd team, they did it in VB, i just adapted it to service us)
+ +++ As with 1.10 area added 2 new fields for items, i updated the itemtemplate stuff, but the meaning of those 2 fields remains unknown for the moment.
+ +++ Thanks to Seth we touched some parts of Milestones 2 also...
+ +++ Accepted WOW builds are 1.9.4 and 1.10.0
+
+Note - if you don't have all TT files, let me know, to give you access to TTDev SVN repository.
+
+Revision 69, 05-04-2006, Seth
+ +++ Fixed that world login error - I hope
+ +++ Few minor fixes in some units
+ +++ Done a minor tweak in the construction of guids (replaced string by a pointer type)
+
+Revision 70, 06-04-2006, Seth
+ +++ Fixed 2 issues with the console - the info bar once again works as intended and fixed a really nasty bug causing program to consume 40-50% of CPU power while idle
+ +++ Refactored some units
+ +++ Some minor optimizations
+ +++ Reduced number of I/O threads spawned per CPU by the Logon Server from 3 to 2 - Realm Server still spawns 3 threads per CPU however
+ +++ Included compiler.inc in units in which it wasn't included before
+
+Revision 71, 06-04-2006, Seth
+ +++ Removed all messed-up unit dependencies - now all units' uses clause contains only units which are lower or at the same level in the program structure hierarchy
+ +++ Added some new layers of abstraction
+ +++ Minor fixes in some units
+
+Revision 72, 06-04-2006, TheSelby
+ +++ Removed the exe from SVN... not needed.
+ +++ Removed delphi7 as it's not supported anymore.
+
+Revision 73, 09-04-2006, Seth
+ +++ Tweaks in some units
+ +++ Secured the YPacketQueue class
+ +++ Fixed the "Cannot resolve unit name" error
+
+Revision 74, 09-04-2006, Seth
+ +++ Fixed a very serious bug which was plaguing the project for a long time (appeared after net-rewrite)
+
+Revision 75, 14-04-2006, Seth
+ +++ Finally fixed the console error causing the program to drain a great amount of CPU power while idle
+ +++ Fixed once and for all the header encryption bug
+ +++ Reorganization of the buffer classes - now they have a shared ancestor YPlatformByteField, see Platform.ByteField.pas
+ +++ Added logout support
+ +++ A few minor fixes all over the sources
+ +++ Added file-handling class, see Platform.Files.pas
+
+Revision 76, 14-04-2006, Seth
+ +++ Fixed an issue with the server shutting down when the "x" key was pressed even when out of focus. Added a new directory because of this containing modified native Delphi units which do lack some routines (mostly Windows API). It is needed to replace these units otherwise the project won't compile.
+
+Revision 77, 15-04-2006, TheSelby
+ +++ Fixed a big part of the Updatefields.
+ --- Still have to look at Druid and Warlock classes as they still have some issues...
+
+Revision 78, 15-04-2006, Seth
+ +++ Completely rewrote console-related methods/routines. The Platform.CRT32.pas unit is no longer needed, all console platform code can be found in Platform.Console.pas unit.
+ +++ Some minor fixes
+
+Revision 79, 15-04-2006, Seth
+ +++ A quick-fix in the Platform.Console.pas unit
+
+Revision 80, 17-04-2006, TheSelby
+ +++ Some minor fixes/modifications in the project
+ +++ Created Creature Templates and related stuff
+ +++ Created GameObjects Templates and related stuff
+
+Revision 81, 20-04-2006, Seth
+ +++ Basics of groups added - added states-system which replaced rules, update manager now supports groups and dispatches updates to them
+ +++ Removed calls for GetConsoleWindow, now called once on startup
+ +++ New threading code, see Platform.Threading
+ +++ Modifications to the IOCP - fixed a bug when in certain situations the completion port handle was not closed properly and added some more non-critical error checks
+ +++ Fixed a bug causing application to stop responding after stopping the server with clients connected
+ +++ Fixed a mem-leak in YPlatformCompress.Decompress method
+ +++ Some additional routines declared in Windows.pas
+ +++ Changed the behaviour of some methods in the OpenCore
+ +++ Removed some useless unit dependencies
+ +++ Many minor changes
+
+Revision 82, 24-04-2006, Seth
+ +++ Rewrote the NewLine method of the YPlatformConsole class which was sometimes causing problems
+ +++ Simplified groups updating - objects hold list of groups they are a member of so no longer update manager must check all groups in order to dispatch updates
+ +++ Another update of Windows.pas - I've introduced a bug in the last commit, sorry. Also instead of commiting .dcu files, makefiles are commited to be used with make.exe (read readme.txt)
+ +++ Added TWord, TLongword and TQuadword records for manipulation of individual bytes of primitive types (word, longword and quadword respectively)
+ +++ Marked some methods as class methods which do not need to work with an actual instance of an object
+ +++ Added distance and angle calculations to YPositionMgr
+ +++ Added a couple of inline directives to property access methods
+ +++ Synchronized the tick generator with the system console - previously the order of startup messages was bad
+ +++ Some other minor changes
+ %%% Added YArea and YAreaManager classes to test out abstract groups - however it's far from being finished
+
+Revision 83, 25-04-2006, Seth
+ +++ Added the possibility to resize the console into a notification icon by pressing the "t" key
+ +++ Some updates to YArea and YGroupManager
+ +++ Changed some methods in YBits and declared them as static
+ +++ Another native Delphi unit change - SysUtils.pas
+ +++ Adapted YPatchManager to work with YFileHandle class
+ +++ Refactored some units
+ +++ Additional comments
+ +++ Some other minor tweaks
+
+Revision 84, 27-04-2006, Seth
+ +++ Upgraded YAreaManager and YArea - support for neighbouring areas, updates are dispatched to them if your visible range crosses their borders, dynamic calculation
+ +++ Some minor tweaks in the SRP6 implementation, mostly just changed the naming convention to be more "delphi-like"
+ +++ Changes regarding minimizing to a tray icon and a mem-leak fix (forgot to free the invisible window)
+ +++ Another addition to Windows.pas
+ +++ Changed the MD5-lib class, optimized it and removed now an useless abstraction level
+ +++ Changed groups a bit - added virtual methods to allow overriding of update dispatching in specific situations (creation, deletion, generic)
+ +++ Fixed a bug causing server to stop responding which occured when you tried to relog with the same character
+
+Revision 85, 1-05-2006, Seth
+ +++ Changed opcode handlers to take only 1 parameter (packet) - opcode parameter has been removed, it can be obtained from the packet itself
+ +++ Assembler optimizations (thx Skizo for some help regarding assembler) - original code left for comparison and readability
+ +++ Even more optimizations (non-assembler)
+ +++ Added some security checks
+ +++ Some internal console changes
+ +++ Changed color of opcode call messages to more easily distinguish handled and unhandled packets
+
+Revision 86, 8-05-2006, Seth
+ +++ Added a prototype of a chat command handler
+ +++ Corrected some security flaws in System.pas - again Delphi sources must be recompiled
+ +++ Fixed a bug causing the server to hang after 2 consecutive tries to connect to an already logged on account
+ +++ Fixed the dispatching of error messages during the logon process - now you'll always get an error message when something is wrong
+ +++ Implemented IP-Ban mechanism - automaticly bans IP after more than 3 consecutive attempts to connect; the ban list gets cleared every minute
+ +++ A few more optimizations
+
+Revision 87, 10-05-2006, Seth
+ +++ Removed almost all memory leaks (thx to Delphi developers - this new memory manager is great :) )
+ +++ Changed the global timer to prevent possible problems in the future
+ +++ Fixed the server time calculation - now the client correctly gets the server time packet
+ +++ Optimized packet data reading methods
+ +++ Many more fixes
+
+Revision 88, 17-05-2006, Seth
+ +++ Some fixes regarding sockets and network
+ +++ Fixed a bug in PkTT engine causing application to become dead-locked under certain circumstances
+ +++ Eliminated ALL memory leaks (hours of tracing :) )
+ +++ Enhanced Tick Generator - more precise and efficient
+
+Revision 89, 17-05-2006, Seth
+ +++ Forgot to commit a file
+
+Revision 90, 19-05-2006, Seth
+ +++ Update manager now compresses update packets
+ +++ Added real packed guid construction (not just $FF + full guid)
+ +++ Enhanced area manager
+ +++ Fixed a bug which forbid the update manager to dispatch updates to other players (aka they were invisible)
+ +++ Assemblerized bit-wise routines
+ +++ A few more changes here and there
+
+Revision 91, 22-05-2006, Seth
+ +++ Changed YPseudoVariant class - now it's consuming 4-times as less memory per instance than before
+ +++ Optimized PkTT DB engine (loading time significantly decreased)
+ +++ Some other minor changes
+
+Revision 92, 24-05-2006, Seth
+ +++ More PkTT optimizations - also fixed a bug I've introduced in the last commit
+ +++ Added YList - basically TList without unncecessary methods/checks/events
+ +++ Added YStringList - basically TStringList without unnecessary methods/checks/events and with the possibility to load from/save to a YPlatformFileHandle
+ +++ Memory usage displayed in the bottom bar is now obtained by calls to GetProcessMemoryInfo instead of GetHeapStatus (which was deprecated anyway) - now it gives more accurate better results
+
+Revision 93, 25-05-2006, Seth
+ +++ Forgot to commit 2 files
+
+Revision 94, 25-05-2006, TheSelby
+ +++ Equip Manager - working, but not in charlist because of some unknown reason at the moment.
+ +++ Movement handler - needs actually terrain and [water, lava, etc] checks -> This will be done at a later time
+ +++ Some modification here and there.
+
+Revision 95, 17-06-2006, TheSelby
+ +++ Moved totally to this SVN host.
+ +++ Imported the sources I had from OLD SVN to this one
+ +++ Some general cleanup... added all database tt files now.
+
+Revision 96, 9-07-2006, Seth
+ +++ Added DBC Database support
+ +++ Optimized some generic routines
+ +++ Replaced hash functions used by Hash Maps - ~30% speed increase and more uniform number distribution
+ +++ Added a conditional symbol in compiler.inc - DEBUG_BUILD - which automaticly turns on the creation of debug .dcu files and enforces I/O checks
+ +++ Secured sockets from buffer overflow - when sending data which has greater size than the internal buffer, it will be sent in parts
+ +++ Network code speed increase and code size decrease
+ +++ Completly replaced old errror manager, better exception raising/handling and exception logging (with stack trace)
+ +++ Improved area manager and group manager
+ +++ Introduced factory system - objects are created on startup and destroyed on close - removes overhead caused by object allocation/deallocation
+ +++ Fixed a nasty update error (actually wrong update packet building)
+ +++ Fixed movement (no longer laggy)
+ +++ Fixed a potential buffer overflow (my error, sorry)
+ +++ Fixed a potential memory-leak
+ +++ Fixed items - correctly saved/loaded and shown on character creation screen
+ +++ Many changes all over the sources which I just can't simply remember
+
+Revision 97, 9-07-2006, Seth
+ +++ Forgot to commit some new tools
+
+Revision 98, 9-07-2006, Seth
+ +++ Forgot to commit one more file :)
+
+Revision 99, 11-07-2006, Seth
+ +++ Reorganized, regioned and refactored some files
+ +++ A few fixes, including DB fixes and safe-checks
+ +++ Some command-handler enhancements
+
+Revision 100, 12-07-2006, Seth
+ +++ Channel support (chatting, banning, kicking, moderating, inviting, password-protected), though not fully tested
+
+Revision 101, 12-07-2006, Seth
+ +++ Update construction optimized and fixed a bug
+
+Revision 102, 14-07-2006, TheSelby
+ +++ As I finally had some free hours, i actually removed that need for windows/system units replacement and moved them in special units
+     Note to Seth: From now on, if you have any new API calls needed that are not in default borland files, add them in those units or create specific new ones, as for example with Delphi 10 Lite Ed the units are hard to rebuild and it it more efficient to have those calls in special units.
+
+Revision 103, 14-07-2006, TheSelby
+  +++ Forgot to add 3 files
+
+Revision 104, 23-07-2006, Seth
+ +++ Update construction optimized and fixed a bug
+ +++ Fixed whispering
+ +++ Added a new movement system - but still in testing and by default disabled
+ +++ Fixed an error in the area manager - sometimes SMSG_DESTROY_OBJECT packet was not sent
+ +++ Some other minor changes including unit reorganization
+
+Revision 105, 9-08-2006, Seth
+ +++ Major DB rewrite
+ +++ Threaded DB decaching
+ +++ Lots of changes, simplified a lot of code sections
+ +++ Optimizations (as always)
+ +++ Fixed an access violation occurring sometimes on server shutdown
+ +++ Some changes to the tick manager
+ --- Creature templates and gameobject templates loading temporarily disabled
+
+Revision 106, 12-08-2006, BigBOSS
+ +++ Modifications in ChatManager related with commands
+ +++ Added some new methods in HashMap
+
+Revision 107, 15-08-2006, Seth
+ +++ Fixed a few memory leaks including some which were present in the container classes
+ +++ Fixed many bugs (thx to BigBOSS for pointing them out)
+ +++ Group manager and abstract group rewrite, reimplemented channels using groups
+ +++ Removed area manager and channel manager, both of these classes were absorbed by the group manager
+ +++ Fixed a bug in I/O Completion Ports and added the possibility to force the server to spawn more networking threads from configuration file
+ +++ Completely rewrote YArea object updates dispatching - now it doesn't send packets when it's not REALLY needed, unfortunately this increased memory usage a lot (later dynamic area loading has to implemented)
+
+Revision 108, 15-08-2006, TheSelby
+ +++ Fixed some possible bugs that may appear when objects are destroyed
+ +++ WOW 1.10.X is totally dropped. Moved to 1.11.X
+ --- Started to work on Quests database loading and NPCTexts. Not finished yet.
+ +++ Some modifications for item query response.
+ +++ Updated Milestones, progress list to comply withour new priorities.
+
+Revision 109, 16-08-2006, Seth
+ +++ Made some changes to the error manager, fixed some bugs and optimized it - also now it logs displacement
+ +++ Fixed a bug causing the server not to send update packets sometimes
+ +++ Fixed a bug causing an ordinary creation packet to be sent upon entering the world instead of a self-creation one
+
+Revision 110, 16-08-2006, TheSelby
+ +++ Fixes in Items area. Read the comment in Components.OpenCore.EquipMgr at line 234
+ +++ Added 2 new commands for repainting and addition of a test weapon.
+      It may seem that the order I specified in SMSG_ITEM_QUERY_SINGLE_RESPONSE is not 100% WDB-like.
+      If any of you have the precise order of the fields should be sent, let me know!
+
+Revision 111, 17-08-2006, Seth
+ +++ Fixed some bugs
+
+Revision 112, 17-08-2006, Seth
+ +++ Hot-fix
+
+Revision 113, 17-08-2006, Seth
+ +++ A fix related to 1.11.X
+
+Revision 114, 19-08-2006, Seth
+ +++ Fixed item updates dispatching - now works as expected
+
+Revision 115, 19-08-2006, Seth
+ +++ Some minor changes to the group manager
+
+Revision 116, 19-08-2006, TheSelby
+ +++ Some more fixes related with items
+ +++ Shethed opcode handled
+ +++ Added command .EQUIPME which will equip your character with some items (set and weapon) so more tests may be made with them. Removed .SELBY command
+
+Revision 117, 20-08-2006, Seth
+ +++ All string containers now have a case-sensitivity switch
+ +++ Fixed auto-recreating items after they were manually deleted from the DB
+
+Revision 118, 20-08-2006, TheSelby
+ +++ Added Quests database loading
+
+Revision 119, 20-08-2006, Seth
+ +++ Changed PkTT loading to support both CRLF and LF linebreak types (a minor slowdown)
+
+Revision 120, 20-08-2006, BIGBOSS
+ *** Started work on Items (Inventory support, moving, swapping, deleting, autoequip etc).
+ +++ Commands : .add, .setspeed
+
+Revision 121, 21-08-2006, TheSelby
+ +++ repaired some bug in Quests Database
+ +++ Repaired saving bug in PKTT Engine
+ +++ Some changes in ITEM_NAME_QUERY
+ +++ Some other minor changes in commands
+
+Revision 122, 21-08-2006, Seth
+ +++ Fixed and changed some stuff related to items (temporarily some things are disabled)
+
+Revision 123, 21-08-2006, BIGBOSS
+ +++ Fixed many bugs related with Items manipulation and SetSpeed command.
+
+Revison 124, 22-08-2006, Seth
+ +++ Again fixes and changes related with items
+
+Revison 125, 23-08-2006, TheSelby
+ +++ Moved totally to 1.12 version of WOW
+ +++ Fixed whispering and name query to support 1.12
+ +++ Added NPC Texts DataBase loading support.
+
+Revision 126, 25-08-2006, TheSelby
+ +++ Hot fixes in Update Masks
+ +++ Repaired some template issues related with creatures database.
+
+Revision 127, 29-08-2006, TheSelby
+ +++ Fixed a bug in IOCompletionPorts (thanks Seth for helping eliminate it)
+ +++ Honor system. Only player's standing on realm is not handled yet.
+     Added some .HONOR command which will "simulate" killing a player (always honorable kill)
+       in order to test this honor manager. Calculating the rank involves your current level, rank, standing,
+       BG points. Also oponent's level (level difference matters), how many times was killed by you before(if
+       this value is negative than it means the current oponent killed you before so more honor points :) ),
+       his honor rank, his standing, his reputation for his faction, and I think that's all.
+     Open for more sugestions.
+
+Revision 128, 30-08-2006, Seth
+ *** Started working on nodes system (spawns, waypoints, triggers)
+ *** Started ExtensionCore
+ +++ Removed a memory leak and some optimizations
+ +++ Rewrote string hashing functions - now 3.5-times faster
+ +++ Added some more exception handlers to DataCore - some non-critical errors will no longer crash the server
+ +++ Creature templates and gameobject templates loading enabled once again
+ +++ StrToUInt routine now recognizes hexadecimal numbers and converts them (C and Pascal styles - 0x,  $)
+ +++ Some minor changes
+
+Revision 129, 30-08-2006, Seth
+ +++ Hotfix
+
+Revision 130, 01-09-2006, Seth
+ +++ Changes to the error manager - it now logs only exceptions which cause a crash or those which are "eaten"
+ +++ Optimized update mask
+ +++ Bags work
+ +++ Fixed a bug in the node manager and the group manager
+
+Revision 131, 03-09-2006, TheSelby
+ +++ Created a separate clean branch for working on TBC
+ +++ Added some commands and their corespondents, mostly related with teleporting. They are only for guidance ATM
+ +++ Updated TBC version to work only with 5665 version of WOW TBC now.
+
+Revision 132, 03-09-2006, Seth
+ *** Initial work on spawns started
+ +++ Again optimized update mask
+ +++ Added and fixed a couple of commands
+ +++ Some item handling changes (not bugless)
+
+Revision 133, 03-09-2006, Seth
+ +++ Some fixes
+
+Revision 134, 06-09-2006, BIGBOSS
+ +++ Set ammo, swap, autoequip, autostorebag and split item working
+ *** Started working on items trading
+
+Revision 135, 07-09-2006, TheSelby
+ +++ Added new commands for Flags checking and discovery
+ +++ Removed old compile flags, added new.
+ +++ Reworked the TBC build process.
+ +++ A small bug in items deletion
+
+Revision 136, 15-09-2006, Seth
+ +++ Rewrote update mask - now it uses a completely different system to construct update packets
+ +++ So many other changes and fixes that I can't even think of one :)
+
+Revision 137, 15-09-2006, Seth
+ +++ Hot-fix
+
+Revision 138, 21-09-2006, Pavkam
+ +++ Connectivity with BFG Sniffer for mutual debugging.
+ +++ Small changes.
+
+Revision 139, 22-09-2006, TheSelby
+ +++ Fixed a bug in ZLib Decompression of packets
+ +++ Properly reading addons informations now. Adding new ones in database. Thus addosn database created too.
+ +++ Finally fixed sheathing.
+ +++ Some other minor changes.
+
+Revision 140, 23-09-2006, Seth
+ +++ Rewrote tick generator
+ +++ Fixed a memory leak
+ +++ Changed the format of debug info data, now only 40% of the original size (the executable is smaller)
+ +++ Updated error manager once again - when a system exception occurs a more detailed description of the exception is stored if available (AVs mostly)
+ +++ Reorganized units, dependencies and classes
+ +++ Updated zlib .obj files
+ +++ Some other minor changes here and there
+
+Revision 141, 24-09-2006, Seth
+ +++ New container type - hash sets - added for general usage
+ +++ Optimized iterator code
+ *** Starting to add some support classes encapsulating low-level routines
+
+Revision 142, 26-09-2006, TheSelby
+ +++ Items modify all your character's stats now (like strength, health, damage, resitances, etc)
+ +++ Default Start items are added to backpack.
+ +++ Repaired some bugs in database (character templates)
+ +++ Some minor changes to some parts of the code.
+
+Revision 143, 01-10-2006, TheSelby
+ +++ One more bug fixed in sheathing
+ +++ Removed some obsolete code related with sheathing
+ +++ Repaired some DB bugs
+ +++ Added some coloring constants for chat
+
+Revision 144, 07-10-2006, Seth
+ +++ Switched to a completely asynchronous socket model under windows
+ +++ Added socket timeout detection
+ +++ Source reorganization, moved many string constants into a separate file and changed them into resourcestrings
+ +++ Fixed a bug in the error manager which gave wrong stack trace with reraised exceptions
+ +++ Changes in the console class - now handles console screen buffer resize events, some optimizations and changes
+ +++ Many other small changes
+
+Revision 145, 08-10-2006, Seth
+ +++ Fixed some socket issues
+ +++ Fixed a never-ending loop after sending an unknown packet id on the logon server (sorry, my fault)
+
+//Revision 146, 08-10-2006, Seth
+// +++ Security hole fix
+
+Revision 146, 10-10-2006, PavkaM
+ +++ Project Cleanup.
+ +++ Repaired the SVNBuild tool to work with non space delimited directories and
+    with newest TortoiseSVN.
+ +++ Started a test tool for maps (will use it to implement mapmanager)
+
+Revision 147, 13-10-2006, ZaDarkSide
+ +++ Automatic account creation
+
+Revision 148, 18-10-2006, TheSelby
+ +++ Modified parts of TBC code to work with 5991 (TBC Closed Beta)
+
+Revision 149, 20-10-2006, TheSelby
+ +++ Updated TBC code to support 6022.
+//Finally blizz cleaned-up a bit the upd fields :)
+
+//Revision 150, 1-11-2006, Seth
+// +++ Redesigned some core parts
+// +++ Reorganized units, added some more miscleanous routines
+// +++ Updated the error manager - now using raw call tracing method (reports more entries), dbghelp.dll is only used to get the names of kernel symbols and on fatal exception stores memory, OS and CPU info along with the call stack
+// --- Playability broken atm - some code parts are still commented out and need to changed to work with the new DB system
+// --- A static memory leak which I haven't been able to track down yet
+// --- New PCP binary engine not finished, please do not use it yet
+// --- Some sort of a weird memory corruption bug with YAccountEntry - when a boolean field is declared as the last field, the last 4 allocated entries cause AVs (changing the order of fields fixes the problem, some hidden nasty bug for sure)
+
+//Revision 151, 16-11-2006, Seth
+// +++ Millions of things including various bug fixes, rare synchronization errors, improved performance, some serious DB bug fixes, DB enhancements and mostly getting the server to work like before the DB rewrite
+// +++ Fixed the memory corruption bug
+// +++ Some assembly code for GUID packing/unpacking (without MMX, fares quite well)
+// +++ Reduced memory usage
+// +++ Error logs also contain CPU info, OS info and Memory info after a crash
+// +++ Fixed some item-handling stuff (auto-storing mainly)
+// +++ Complete new Windows API header translations including the Native API translation
+// +++ Separated some code into more units and also merged some other units which did contain almost no code at all
+// +++ Some code "beautification" (at no performance expense of course ;) )
+// --- Periodic DB decaching still not reimplemented
+// --- Starting items assignment still unimplemented
+
+//Revision 152, 13-12-2006, Seth
+// +++ Implemented Terrain Manager - now it's possible to query height, area info, zone info, liquid height
+// +++ Fixed some hidden DB bugs
+// +++ Changed the in-game command system, now it's possible to create child command constructs (like SET/GET MONEY/HEALTH/MANA) - not finished though, another part of the new design, the priviledges, are not ready yet
+// +++ Code style cleanup, reorganization
+// +++ Some assembly optimizations
+// +++ Fixed some generic bugs
+// +++ Removed a static memory leak
+// +++ Fixed some movement issues when jumping
+// +++ Zillions of changes all over the place
+
+//Revision 153, 14-12-2006, Seth
+// +++ Fixed a bug which could prevent clients from logging in sometimes
+// +++ Fixed a bug which caused newly created chars to be naked
+// +++ Fixed a bug which prevented the server to start in case terrain.smd file was missing
+
+Revision 154, 15-12-2006, BIGBOSS
+ +++ Trade system + errors nearly fully working
+ +++ Some Debug tools
+
+Revision 155, 18-12-2006, BIGBOSS
+ *** Started work on quests and NPCTexts (DB loading correctly and Templates ready + QueryQuest, AcceptQuest, DeleteQuest, etc.)
+
+Revision 156, 28-12-2006, BIGBOSS
+ +++ Corrected a bug in root command handler + some changes
+ *** Basic quest system nearly working (save quest log/accept/finish etc.)
+
+Revision 157, 02-01-2007, BIGBOSS
+ *** Many changes in Quest system (including exploration quests)
+ +++ Debug procedures : Teleportation commands for GM (.listtp .gotp etc.)
+
+Revision 158, 08-01-2007, Seth
+ +++ Fixes, fixes, fixes
+ +++ Source reorganization and beautificaton
+ +++ Some optimizations
+
+Revision 159 - not shown, 09-01-2007, BIGBOSS
+// +++ Some fixes with Items
+
+Revision 159, 20-01-2007, Seth
+ +++ Optimization manager
+ +++ Code style cleanup, reorganization
+ +++ Code safety
+ +++ Bug fixes
+ +++ maphlp.dll update
+
+Revision 160, 20-01-2007, ZaDarkSide
+ +++ [Tool] Code name XYAWE7 - YAWE Launcher
+
+Revision 160 - not shown, 20-01-2007, Seth
+// +++ Minor source incompatibility fix
+
+Revision 161, 25-01-2007, Seth
+ +++ PkTT optimization (oh man, again :) )
+ +++ Minor source changes and a few fixes in some Misc units
+ +++ Integrated plugin manager created earlier into the extension core
+
+//Revision 161- not shown,  25-01-2007, Seth
+// +++ Hotfix
+
+Revision 162, 27-01-2007, PavkaM
+ *** Cleanup.
+ *** First version of our API.
+ 
+Revision 163, 27-01-2007, TheSelby
+ +++ minor fixes in items equipment
+ +++ fixes in chat manager related with some commands usage
+ +++ 2.0.5 updatefields
+ +++ 2.0.5 auth fixes (valid though for 2.0.6 too)
+ +++ fixed 2.0.5 realmlist                                  
+ +++ 2.0.6 updatefields
+ +++ fixed 2.0.6 realmlist (finally blizz cleaned it up a bit. Still they can "clean" it more and save
+       another 4 bytes or 5 but whatever :D )
+ +++ added opcodes
+ +++ fixed 2.0.6 A9 (thanks to a guy... you all know him... "the guy" xD )
+       The ONLY supported version ATM is 2.0.6 (build 6337)
+ +++ added some opcodes handlers in order to work with 2.0.6
+ +++ some parts of code that were no longer used were cleaned-up
+ +++ database updates. Fixed Items loading for 2.0.6
+ +++ fixed items query. New options in items database are required 
+       as now there are gem options, socketing, etc...
+ +++ a temporary "hack" implemented to fix some sort of bug. If your account has no characters, 
+       WOW client disconnects itself from 3725 and reconnects, asking again for realmlist and 
+       so char_enum probably has to be sent again. However this sort of disconnecting/reconnecting 
+       is not supported atm by YAWE. Why is it a temporary "hack"? Because char_enum (if no characters) 
+       is sent as damaged packet (only opcode and size are sent) so in WOW client you'll receive an error
+       as characters packet is damaged, but you'll still be there so you can create a new character now.
+
+Revision 164, 27-01-2007, Seth
+ +++ Added a documentation file, comments and suggestion welcome
+
+Revision 165, 1-02-2007, Seth
+ +++ Source code tree reorganization
+
+Revision 166, 5-02-2007, Seth
+ +++ More code changes
+ +++ Added thread manager, direct support for SMP/NUMA systems
+ 
+Revision 167, 12-02-2007, TheSelby
+ +++ Some fixes
+ +++ Started project documentation based on JavaDoc comments style that will be parsed by YAPI
+ 
+Revision 168, 05-03-2007, Seth
+ +++ Minor source structure changes
+ +++ Some minor enhancements here and there
+ +++ Once again possible to see/spawn creatures, possibility to force movement with a command

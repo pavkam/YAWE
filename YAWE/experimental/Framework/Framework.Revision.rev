@@ -1,0 +1,35 @@
+{*------------------------------------------------------------------------------
+  To be included in Framework
+  
+  This program is free software. You can redistribute it and/or modify
+  it under the terms of the GNU Lesser General Public License (LGPL)
+  as published by the Free Software Foundation; either version 2 of
+  the License.
+
+  @Link http://yawe.mcheats.net/index.php
+  @Copyright YAWE Team
+  @Author PavkaM
+ 
+  PLEASE DO NOT MODIFY THIS FILE BY HAND! IT IS MANAGED BY SVNTOOL!
+------------------------------------------------------------------------------}
+
+{ Revision Number of the SVN }
+RevisionNumber = {<REV>}86{</REV>};
+
+
+{ Particular build count for each developer }
+{*BUILDS*}
+PavkaM_Builds = {<USR-PavkaM>}587{</USR-PavkaM>};
+TheSelby_Builds = {<USR-TheSelby>}3741{</USR-TheSelby>};
+BIGBOSS_Builds = {<USR-BIGBOSS>}2069{</USR-BIGBOSS>};
+Seth_Builds = {<USR-Seth>}21466{</USR-Seth>};
+ZaDarkSide_Builds = {<USR-ZaDarkSide>}0{</USR-ZaDarkSide>};
+
+{
+ Note: for this tool to work, a file named "usermark.txt" must be
+ present in this directory containing one line:
+ "user_name<" -> Meaning, there should be an user name followed by "<" sign.
+}
+
+{ Summary build count to be displayed in application }
+BuildCount = PavkaM_Builds + TheSelby_Builds + Seth_Builds + BIGBOSS_Builds + ZaDarkSide_Builds;

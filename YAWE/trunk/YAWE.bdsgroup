@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<PersonalityInfo>
+		<Option>
+			<Option Name="Personality">Default.Personality</Option>
+			<Option Name="ProjectType"></Option>
+			<Option Name="Version">1.0</Option>
+			<Option Name="GUID">{FB636B1C-BD20-4D61-ADA7-55FBAA9C73F4}</Option>
+		</Option>
+	</PersonalityInfo>
+	<Default.Personality>  <Projects>
+      <Projects Name="YAWE.exe">YAWE.bdsproj</Projects>
+      <Projects Name="ucl32.dll">..\..\Library\UCL32\ucl32.bdsproj</Projects>
+      <Projects Name="yes32.dll">..\..\Library\YES\yes32.bdsproj</Projects>
+      <Projects Name="bfgfrmwrk.bpl">Framework\Packages\bfgfrmwrk.bdsproj</Projects>
+      <Projects Name="yawedbshared.bpl">..\..\Plugins\DatabaseLayers\yawedbshared.bdsproj</Projects>
+      <Projects Name="bfgcore.bpl">..\..\Shared\Bfg\Packages\bfgcore.bdsproj</Projects>
+      <Projects Name="Targets">YAWE.exe ucl32.dll yes32.dll bfgfrmwrk.bpl yawedbshared.bpl bfgcore.bpl</Projects>
+    </Projects>
+    <Dependencies>
+      <Dependency GUID="{29C9355F-8EDC-45AB-B460-6F30F09DF619}">
+        <Dependency GUID="{24C866B3-B351-485F-80DF-90CDC8EAE5AE}"/>
+        <Dependency GUID="{CF262CF8-1AC7-4B0B-BF81-9FE8F74CB04F}"/>
+        <Dependency GUID="{9AE9D0B6-95A9-4B68-9BD3-BC10B05F79A5}"/>
+        <Dependency GUID="{41791DDE-9AC2-4C6D-9888-8A57EDF8A5E7}"/>
+      </Dependency>
+      <Dependency GUID="{24C866B3-B351-485F-80DF-90CDC8EAE5AE}">
+        <Dependency GUID="{9AE9D0B6-95A9-4B68-9BD3-BC10B05F79A5}"/>
+        <Dependency GUID="{41791DDE-9AC2-4C6D-9888-8A57EDF8A5E7}"/>
+      </Dependency>
+      <Dependency GUID="{CF262CF8-1AC7-4B0B-BF81-9FE8F74CB04F}">
+        <Dependency GUID="{41791DDE-9AC2-4C6D-9888-8A57EDF8A5E7}"/>
+        <Dependency GUID="{9AE9D0B6-95A9-4B68-9BD3-BC10B05F79A5}"/>
+      </Dependency>
+      <Dependency GUID="{41791DDE-9AC2-4C6D-9888-8A57EDF8A5E7}">
+        <Dependency GUID="{9AE9D0B6-95A9-4B68-9BD3-BC10B05F79A5}"/>
+      </Dependency>
+    </Dependencies>
+  </Default.Personality>
+</BorlandProject>

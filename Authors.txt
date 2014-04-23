@@ -1,0 +1,11 @@
+This file contains the names of all contributors to the YAWE project in their appearance order.
+Also the state and contribution level is recomended to be present.
+
+
+ 1. PavkaM. (Core Programming, Maintaining, Documentation)
+ 2. TheSelby. (Programming, Maintaining, Research, Documentation)
+ 3. Seth. (Core Programming, Maintaining, Tweaks, Optimizations)
+ 4. BIGBOSS (Programming)
+ 5. Kn00n (Programming)
+ 6. ZaDarkside (Programming, Tweaks)
+ 7. Frixion (Programming)
